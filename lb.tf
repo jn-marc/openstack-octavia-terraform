@@ -7,7 +7,7 @@ resource "openstack_lb_loadbalancer_v2" "lb1" {
 resource "openstack_lb_listener_v2" "listener_https" {
   name            = "listener_https"
   protocol        = "HTTP"
-  protocol_port   = 443
+  protocol_port   = 80
   loadbalancer_id = "${openstack_lb_loadbalancer_v2.lb1.id}"
 }
 
