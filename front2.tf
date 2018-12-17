@@ -18,7 +18,7 @@ resource "openstack_compute_instance_v2" "front2" {
 
 resource "openstack_lb_member_v2" "front2" {
   name          = "front2"
-  pool_id       = "${openstack_lb_pool_v2.pool1.id}"
+  pool_id       = "${openstack_lb_pool_v2.front_pool.id}"
   address       = "${openstack_compute_instance_v2.front2.network.0.fixed_ip_v4}"
   protocol_port = 80
 
